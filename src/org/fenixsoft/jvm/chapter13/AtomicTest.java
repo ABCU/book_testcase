@@ -31,7 +31,7 @@ public class AtomicTest {
             threads[i].start();
         }
 
-        while (Thread.activeCount() > 1)
+        while (Thread.activeCount() > 2)
             Thread.yield();
 
         System.out.println(race);

@@ -2,7 +2,7 @@ package org.fenixsoft.jvm.chapter12;
 
 /**
  * volatile变量自增运算测试
- *
+ * -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly
  * @author zzm
  */
 public class VolatileTest {
@@ -30,7 +30,7 @@ public class VolatileTest {
         }
 
         // 等待所有累加线程都结束
-        while (Thread.activeCount() > 1)
+        while (Thread.activeCount() > 2)
             Thread.yield();
 
         System.out.println(race);
